@@ -2,12 +2,14 @@
   "name": "validade-api",
   "version": "1.0.0",
   "description": "API de controle de validade (web + mobile) com Express e Firebase",
-  "main": "src/server.js",
+  "main": "api/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "start": "node api/server.js",
+    "dev": "node --watch api/server.js"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

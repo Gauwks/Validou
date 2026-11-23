@@ -1,9 +1,9 @@
 import { auth } from './firebase';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 export async function api(caminho, { method = 'GET', body } = {}) {
-  const token = await auth.currentUser?.getIdToken();
+  const token = await auth?.currentUser?.getIdToken();
   const res = await fetch(`${API_URL}${caminho}`, {
     method,
     headers: {
@@ -22,7 +22,6 @@ export async function api(caminho, { method = 'GET', body } = {}) {
   }
   return dados;
 }
-
 
 export const produtos = {
   listar: () => api('/produtos'),
